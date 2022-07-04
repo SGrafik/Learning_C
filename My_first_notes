@@ -1,0 +1,448 @@
+#include <stdio.h>
+# include <stdlib.h>
+#include <math.h>
+
+
+// BASIC C PROGRAM FRAME
+// =====================
+
+/*
+
+
+#include <stdio.h>
+# include <stdlib.h>
+
+int main()
+{
+
+// MY CODE GOES HERE
+
+	return 0;
+}
+
+*/
+
+----------------------------------------------
+
+
+// VARIABLES
+// =========
+
+int main() 
+{
+	char characterName[] = "John";
+	int characterAge = 35;
+
+	printf("There once was a man named %s\n", characterName);
+	printf("he was %d years old.\n", characterAge);
+
+	// Here I change the variable (age) to something new.
+	characterAge = 26;
+
+	printf("He really liked the name %s\n", characterName);
+	printf("but he didn't like to be %d years old.\n", characterAge);
+
+
+----------------------------------------------
+
+
+// DATA TYPES
+// ==========
+
+	// INT (whole numbers)
+	int age = 40;
+
+	// DOUBLES (decimal numbers; there's also FLOATS later)
+	double gdp = 3.6;
+
+	// CHAR (a single character, use single quotation marks)
+	char grade = 'A';
+
+	// CHAR (a string of characters, use double quotation marks, this creates an array)
+	char name[] = "Mike";
+
+----------------------------------------------
+
+
+// FORMAT SPECIFIERS
+// =================
+/*
+ 
+List of most common format specifiers in C:
+
+1. %d - int (display integers)
+2. %c - char (display character)
+3. %f - float (display floating point number)
+4. %s - array of char (display a string)
+5. %x - int (display hex value)
+6. %% - prints % character
+
+*/
+
+
+----------------------------------------------
+
+
+// PRINTF
+// ======
+
+	// STRING (with new line)
+	printf("Hello World!\n");
+
+	// INT  (with 'format specifier' %d for number, and a new line)
+	printf("%d\n", 500);
+
+	// STRING + INT  (with 'format specifier' %d for number, and a new line)
+	printf("My favourite number is %d\n", 500);
+
+	// STRING + DOUBLE  (with FORMAT SPECIFIER %f for decimal number, and a new line)
+	printf("My favourite number is %f\n", 500.987540);
+
+	// STRING + INT  (with FORMAT SPECIFIERS %d and %s for text, and a new line)
+	// The order in which I ref the % somethings MUST be the same in the following commas!
+	printf("My favourite %s is %d\n", "number", 500);
+
+	// Printing VARIABLES
+	char example1[] = "greatest";
+	printf("Mike is the %s!\n", example1);
+
+
+----------------------------------------------
+
+
+// WORKING WITH NUMBERS
+// ====================
+
+
+	// Printing a FLOATING POINT NUMBER (with new line)
+	printf("%f\n", 5.78);
+
+	// Printing FLOATING POINT NUMBERS and arithmetic (with new line)
+	printf("%f\n", 5.78 + 78.45);
+
+	// Printing INT and arithmetic (with new line)
+	printf("%d\n", 5 + 4);
+
+	// Printing INT and arithmetic (with new line)
+	printf("%d\n", 5 / 4);
+
+	// Printing and arithmetic FLOAT NUMBER RESULTS (with new line)
+	printf("%f\n", 5 / 4.0);
+
+	// Printing math FUNCTIONS
+	// ======================
+	// Remember to INCLUDE <math.h> for FUNCTIONS to work!
+
+	printf("%f\n", pow(2, 3) ); // Raised to the Power of (with new line)
+
+	printf("%f\n", sqrt(36));	// Square Root of (with new line)
+
+	printf("%f\n", ceil(36.345));	// Round up (with new line)
+
+	printf("%f\n", floor(36.345));	// Round down (with new line)
+
+----------------------------------------------
+
+
+// COMMENTS
+// ========
+
+	// This is a one-line comment
+
+	/*
+	This is a multi-line comment / block comment.
+	Anything following "/*" will be ignored.
+
+	To close the block off I just type...
+
+	*/
+
+----------------------------------------------
+
+
+// CONSTANTS
+// =========
+
+	// Declaring a Constant. By convention the const var name should be UPPERCASE 
+
+	const int EXAMPLE2 = 5;
+		printf("%d\n", EXAMPLE2);
+
+
+----------------------------------------------
+	
+
+// USER INPUT
+// ==========
+
+	// Create an INT variable ("your_age"), prompt the user for input with "printf", "scanf_s" with type "%d" and "&"+"var_name".
+
+		int your_age;
+		printf("Enter your age: ");
+		scanf_s("%d", &your_age);
+		printf("You are %d years old.\n", your_age);
+
+
+	// To collect a FLOAT: same as above but use "%lf" within scanf_s and then "%f" for printf.
+
+		double gpa2;
+		printf("Enter your GPA: ");
+		scanf_s("%lf", &gpa2);
+		printf("Your GPA is %f.\n", gpa2);
+
+
+	// To collect a STRING (only a SINGLE WORD!!!)same as above but DO NOT USE "&" before the var name and use "scanf_s" + the buffer size! 
+	// It is possible to use multiple %s to catch multiple strings with scanf_s (I NEED TO LOOK THAT ONE UP!)
+	// I need to increase the buffer size +1 because the \0 will be added into memory as well!
+	
+		char name3[20];
+		printf("Enter your name: ");
+		scanf_s("%s", name3, 20);
+		printf("Welcome %s!\n", name3);
+
+
+	// To collect a STRING (MULTIPLE WORDS!!!). This syntax is a bit different. Also it may be influenced by 'something above' 
+	// and I it runs only if other INPUT sample code above is commented out...
+
+		char name4[20];
+		printf("Enter your FULL name: ");
+		fgets(name4, 20, stdin);
+		printf("Your Full name is %s!\n", name4);
+
+----------------------------------------------
+
+	
+	// BASIC CALCULATOR
+	// ================
+
+	// Create var (w/o values), prompt for input with printf, value the var with scanf_s and DONT FORGET the "&" before the var_name!
+	// Also, if I'm accepting DOUBLE I need to scanf_s for "%lf" rather than "%d" or "%f". Then I need to printf "%f" as well.
+	// NOTE FROM WIKI: %lf : Scan as a double floating-point number. "Float" format with the "long" specifier.
+
+	double num1;
+	double num2;
+
+		printf("Please enter your FIRST number: ");
+		scanf_s("%lf", &num1);
+
+		printf("Please enter your SECOND number: ");
+		scanf_s("%lf", &num2);
+
+		printf("The result is: %lf", num1 + num2);
+
+
+
+	return 0;
+
+----------------------------------------------
+
+
+	// ADVANCED CALCULATOR
+	// ===================
+
+	// Create var (w/o values), prompt for input with printf, value the var with scanf_s 
+	// DON'T FORGET the "&" before the var_name!
+	// The OPERAND needs to be entered first for some reason..?
+	// The SWITCH / CASE need to have a BREAK on each instance.
+	// There needs to be a "DEFAULT: BREAK" at the end of the SWITCH / CASE function to terminate.
+	// Within the SWITCH func and then within the CASE the "IF" statements need to each be inside of {}.
+	// Also, if I'm accepting DOUBLE I need to scanf_s for "%lf" rather than "%d" or "%f".
+	// NOTE FROM WIKI: %lf : Scan as a double floating-point number. "Float" format with the "long" specifier.
+	// FROM: https://www.youtube.com/watch?v=d7R2bGdHl8Y
+
+
+	double num1, num2;
+	char op;
+
+		printf("Enter OPERAND: ");
+		scanf_s("%c", &op, 2);
+
+		printf("Please enter your FIRST number: ");
+		scanf_s("%lf", &num1);
+
+		printf("Please enter your SECOND number: ");
+		scanf_s("%lf", &num2);
+
+		switch (op)
+		{
+		case '+':
+			printf("%lf + %lf = %lf", num1, num2, num1 + num2);
+			break;
+
+		case '-':
+			printf("%lf - %lf = %lf", num1, num2, num1 - num2);
+			break;
+
+		case '*':
+			printf("%lf * %lf = %lf", num1, num2, num1 * num2);
+			break;
+
+		case '/':
+			if (num2 == 0.0)
+			{
+				printf("Divided by Zero Error");
+
+			}
+			
+			else
+			{
+				printf("%lf / %lf = %lf", num1, num2, num1 / num2);
+				
+			}
+			break;
+
+		default:
+			break;
+		}
+
+----------------------------------------------
+
+
+	// FUNCTIONS
+	// =======
+	
+	// Place the func BEFORE main().
+	// This is written OUTSIDE of the main() func. But it is CALLED WITHIN the main().
+	// If the func is not going to return anything it's being designated as VOID.
+	
+	void hello(char name[], int age) {
+	printf("Hello %s, you are %d years old.", name, age);
+}
+
+int main()
+{
+	hello("Mike", 55);
+	return 0;
+}
+
+
+----------------------------------------------
+
+
+	// FUNCTIONS (RETURNING)
+	// ================
+	
+	// Place the func BEFORE main() if I want to return anything from it.
+	// TO AVOID THIS PROBLEM: "Prototype" the func by declaring it at the top "double cube(double num);" and
+	// then I can actually define it at the bottom and call it in main()!!!!!!
+	// Choose the return type / data type.
+	
+	
+// This func cubes any number.
+
+double cube(double num) {
+
+	//"double result = num * num * num;" & then return the "result" var "return result;".
+	// Doing this is one option, BUT I can simply use the return to do the calculation!
+	 
+	return num * num * num;
+}
+
+int main()
+{
+	printf("Answer: %f", cube(4));
+	return 0;
+}
+
+
+----------------------------------------------
+
+
+// IF STATEMENT (SIMPLE)
+// =====================
+
+int greater(int num1, int num2) {
+	int result;
+	if (num1 > num2) {
+		result = num1;
+	}
+	else {
+		result = num2;
+	}
+	return result;
+}
+
+
+int main()
+{
+	printf("The greater number is: %d", greater(4, 10));
+	return 0;
+}
+
+
+----------------------------------------------
+
+
+// IF / ELSE IF STATEMENT (COMPLEX with INPUT x 3)
+// ===============================================
+
+// The "&&" (as used within the IF statement) means AND...  (The "||" would me OR).
+// REMEMBER: Pass the scanf_s var with an "&" before the var name when taking input!!!
+
+
+int greatest(int num1, int num2, int num3) {
+
+	int result;
+
+	if (num1 >= num2 && num1 >= num3) {
+		result = num1;
+
+	} else if (num2 >= num1 && num2 >= num3) {
+		result = num2;
+
+    } else {
+		result = num3;
+	}
+	
+		return result;
+}
+
+
+int main()
+{
+	int num1; int num2; int num3;
+
+	printf("Input First Number: ");
+	scanf_s("%d", &num1);
+
+	printf("Input Second Number: ");
+	scanf_s("%d", &num2);
+
+	printf("Input Third Number: ");
+	scanf_s("%d", &num3);
+
+	printf("The greatest number is: %d", greatest(num1, num2, num3));
+	
+	return 0;
+}
+
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+
+
+
+
+
+
+/*
+		// JUST PLAYING AROUND WITH TAKING INPUT & PRINTING TO STDIO
+		char test[4];
+			printf("Enter 3 Letters: ");
+			scanf_s("%5s", test, 4);
+			printf("You've entered %s\n", test);
+
+*/
+	
+
+		// MY DEBUGGING TEST
+		printf("I'm DONE now");
+
+
+	return 0;
+
+}
