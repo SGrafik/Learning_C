@@ -59,7 +59,7 @@ int main()
 	char grade = 'A';
 
 	// CHAR (a string of characters, use double quotation marks, this creates an array)
-	char name[] = "Mike";
+	char name[] = "Stefan";
 
 ----------------------------------------------
 
@@ -104,7 +104,7 @@ List of most common format specifiers in C:
 
 	// Printing VARIABLES
 	char example1[] = "greatest";
-	printf("Mike is the %s!\n", example1);
+	printf("Stefan is the %s!\n", example1);
 
 
 ----------------------------------------------
@@ -311,7 +311,7 @@ List of most common format specifiers in C:
 
 int main()
 {
-	hello("Mike", 55);
+	hello("Stefan", 55);
 	return 0;
 }
 
@@ -374,9 +374,10 @@ int main()
 
 
 // IF / ELSE IF STATEMENT (COMPLEX with INPUT x 3)
-// ===============================================
+// ===============================
 
-// The "&&" (as used within the IF statement) means AND...  (The "||" would me OR).
+// Here's a IF / ELSE iF gate as a seperate func (called "greatest").
+// The "&&" (as used within the IF statement) means AND...  (The "||" would mean OR).
 // REMEMBER: Pass the scanf_s var with an "&" before the var name when taking input!!!
 
 
@@ -441,6 +442,23 @@ int main()
 
 		// MY DEBUGGING TEST
 		printf("I'm DONE now");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	return 0;
