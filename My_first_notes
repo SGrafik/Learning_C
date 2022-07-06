@@ -6,7 +6,6 @@
 // BASIC C PROGRAM FRAME
 // =====================
 
-/*
 
 
 #include <stdio.h>
@@ -20,7 +19,7 @@ int main()
 	return 0;
 }
 
-*/
+
 
 ----------------------------------------------
 
@@ -211,6 +210,8 @@ List of most common format specifiers in C:
 
 ----------------------------------------------
 
+#include <stdio.h>
+# include <stdlib.h>
 	
 	// BASIC CALCULATOR
 	// ================
@@ -236,13 +237,15 @@ List of most common format specifiers in C:
 
 ----------------------------------------------
 
+#include <stdio.h>
+# include <stdlib.h>
 
 	// ADVANCED CALCULATOR
 	// ===================
 
 	// Create var (w/o values), prompt for input with printf, value the var with scanf_s 
 	// DON'T FORGET the "&" before the var_name!
-	// The OPERAND needs to be entered first for some reason..?
+	// IMPORTANT!!! Put a "SPACE" infront of the "%c" to scan a CHAR with scanf_s!
 	// The SWITCH / CASE need to have a BREAK on each instance.
 	// There needs to be a "DEFAULT: BREAK" at the end of the SWITCH / CASE function to terminate.
 	// Within the SWITCH func and then within the CASE the "IF" statements need to each be inside of {}.
@@ -251,20 +254,22 @@ List of most common format specifiers in C:
 	// FROM: https://www.youtube.com/watch?v=d7R2bGdHl8Y
 
 
-	double num1, num2;
-	char op;
+int main() {
 
-		printf("Enter OPERAND: ");
-		scanf_s("%c", &op, 2);
+double num1, num2;
+char op;
 
-		printf("Please enter your FIRST number: ");
-		scanf_s("%lf", &num1);
+	printf("Please enter your FIRST number: ");
+	scanf_s("%lf", &num1);
 
-		printf("Please enter your SECOND number: ");
-		scanf_s("%lf", &num2);
+	printf("Enter OPERAND: ");
+	scanf_s(" %c", &op, 2); // IMPORTANT!!! Put a "SPACE" infront of the "%c" to scan a CHAR with scanf_s!!!!
+	
+	printf("Please enter your SECOND number: ");
+	scanf_s("%lf", &num2);
 
-		switch (op)
-		{
+		switch(op)	{
+
 		case '+':
 			printf("%lf + %lf = %lf", num1, num2, num1 + num2);
 			break;
@@ -283,11 +288,11 @@ List of most common format specifiers in C:
 				printf("Divided by Zero Error");
 
 			}
-			
+
 			else
 			{
 				printf("%lf / %lf = %lf", num1, num2, num1 / num2);
-				
+
 			}
 			break;
 
@@ -295,8 +300,14 @@ List of most common format specifiers in C:
 			break;
 		}
 
+	return 0;
+		}
+
+
 ----------------------------------------------
 
+#include <stdio.h>
+# include <stdlib.h>
 
 	// FUNCTIONS
 	// =======
@@ -312,12 +323,15 @@ List of most common format specifiers in C:
 int main()
 {
 	hello("Stefan", 55);
+	
 	return 0;
 }
 
 
 ----------------------------------------------
 
+#include <stdio.h>
+# include <stdlib.h>
 
 	// FUNCTIONS (RETURNING)
 	// ================
@@ -341,12 +355,15 @@ double cube(double num) {
 int main()
 {
 	printf("Answer: %f", cube(4));
+	
 	return 0;
 }
 
 
 ----------------------------------------------
 
+#include <stdio.h>
+# include <stdlib.h>
 
 // IF STATEMENT (SIMPLE)
 // =====================
@@ -366,11 +383,15 @@ int greater(int num1, int num2) {
 int main()
 {
 	printf("The greater number is: %d", greater(4, 10));
+	
 	return 0;
 }
 
 
 ----------------------------------------------
+
+#include <stdio.h>
+# include <stdlib.h>
 
 
 // IF / ELSE IF STATEMENT (COMPLEX with INPUT x 3)
@@ -417,7 +438,61 @@ int main()
 	return 0;
 }
 
+
 ----------------------------------------------
+
+#include <stdio.h>
+# include <stdlib.h>
+
+
+// STRUCTS
+// =======
+
+// A struct can store groups of DIFFERENT DATA TYPES.
+// For example: They can be used to MODEL REAL LIFE ENTITIES in C.
+// Structs can be passed into fucs, use it in an IF statement etc. just like a VAR or ARRAY.
+// They are similar (same?) as CALSSES in Python.
+// This example models a student...
+
+
+struct STUDENT {
+	char name[50];
+	char major[50];
+	int age;
+	double gpa;
+};
+
+int main() {
+
+	struct STUDENT student1;
+	student1.age = 22;
+	student1.gpa = 3.2;
+	strcpy(student1.name, "Jim Doe");
+	strcpy(student1.major, "Business");
+
+	struct STUDENT student2;
+	student2.age = 35;
+	student2.gpa = 2.5;
+	strcpy(student2.name, "Kathrine Smith");
+	strcpy(student2.major, "Computer Science");
+
+
+	printf("%s\n", student1.name);
+	printf("%d\n", student1.age);
+	printf("%s\n", student1.major);
+	printf("%f\n", student1.gpa);
+
+	printf("%s\n", student2.name);
+	printf("%d\n", student2.age);
+	printf("%s\n", student2.major);
+	printf("%f\n", student2.gpa);
+
+
+	return 0;
+		}
+
+
+
 ----------------------------------------------
 ----------------------------------------------
 ----------------------------------------------
