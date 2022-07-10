@@ -1,0 +1,24 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+// IF STATEMENT (SIMPLE)
+// =====================
+
+int greater(int num1, int num2) {
+	int result;
+	if (num1 > num2) {
+		result = num1;
+	}
+	else {
+		result = num2;
+	}
+	return result;
+}
+
+
+int main()
+{
+	printf("The greater number is: %d", greater(4, 10));
+	
+	return 0;
+}
