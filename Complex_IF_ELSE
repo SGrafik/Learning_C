@@ -1,0 +1,47 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// IF / ELSE IF STATEMENT (COMPLEX with INPUT x 3)
+// ===============================
+
+// Here's a IF / ELSE iF gate as a seperate func (called "greatest").
+// The "&&" (as used within the IF statement) means AND...  (The "||" would mean OR).
+// REMEMBER: Pass the scanf_s var with an "&" before the var name when taking input!!!
+
+
+int greatest(int num1, int num2, int num3) {
+
+	int result;
+
+	if (num1 >= num2 && num1 >= num3) {
+		result = num1;
+
+	} else if (num2 >= num1 && num2 >= num3) {
+		result = num2;
+
+    } else {
+		result = num3;
+	}
+	
+		return result;
+}
+
+
+int main()
+{
+	int num1; int num2; int num3;
+
+	printf("Input First Number: ");
+	scanf_s("%d", &num1);
+
+	printf("Input Second Number: ");
+	scanf_s("%d", &num2);
+
+	printf("Input Third Number: ");
+	scanf_s("%d", &num3);
+
+	printf("The greatest number is: %d", greatest(num1, num2, num3));
+	
+	return 0;
+}
