@@ -1,0 +1,44 @@
+# include <stdio.h>
+# include <stdlib.h>
+	
+int main() {
+	
+// USER INPUT
+// ==========
+
+	// Create an INT variable ("your_age"), prompt the user for input with "printf", "scanf_s" with type "%d" and "&"+"var_name".
+
+		int your_age;
+		printf("Enter your age: ");
+		scanf_s("%d", &your_age);
+		printf("You are %d years old.\n", your_age);
+
+
+	// To collect a FLOAT: same as above but use "%lf" within scanf_s and then "%f" for printf.
+
+		double gpa2;
+		printf("Enter your GPA: ");
+		scanf_s("%lf", &gpa2);
+		printf("Your GPA is %f.\n", gpa2);
+
+
+	// To collect a STRING (only a SINGLE WORD!!!)same as above but DO NOT USE "&" before the var name and use "scanf_s" + the buffer size! 
+	// It is possible to use multiple %s to catch multiple strings with scanf_s (I NEED TO LOOK THAT ONE UP!)
+	// I need to increase the buffer size +1 because the \0 will be added into memory as well!
+	
+		char name3[20];
+		printf("Enter your name: ");
+		scanf_s("%s", name3, 20);
+		printf("Welcome %s!\n", name3);
+
+
+	// To collect a STRING (MULTIPLE WORDS!!!). This syntax is a bit different. Also it may be influenced by 'something above' 
+	// and I it runs only if other INPUT sample code above is commented out...
+
+		char name4[20];
+		printf("Enter your FULL name: ");
+		fgets(name4, 20, stdin);
+		printf("Your Full name is %s!\n", name4);
+		
+			return 0;
+		}
