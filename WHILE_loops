@@ -1,0 +1,23 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// WHILE LOOPS
+// ===========
+
+// To increment the index I can use "index++". 
+// That's the same as "index = index + 1".
+
+
+int main() {
+
+	int index = 1;
+	while (index <= 5) {
+		printf("%d\n", index);
+		index++;               
+	}
+
+
+	return 0;
+		}
