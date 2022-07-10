@@ -1,0 +1,43 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// ADVANCED GUESSING GAME (NESTED IF statement & WHILE loop & EXIT)
+// ========================================
+
+// This game will ask the user to guess a secret number.
+// If the guess is correct the game will print "You WIN!".
+// The user has 3 tries only. I'm using "counter++" to increment the VAR. 
+// If the GUESS is wrong it will prompt to "Try again..." twice after the first try.
+// If the user is out of tries the game will print "You LOOSE..."
+
+int main() {
+
+	int secretNumber = 5;
+	int guess = 0;
+	int counter = 0;
+
+	printf("Enter a number: ");
+	scanf_s("%d", &guess);
+	counter++;
+
+	if (guess == secretNumber) {
+		printf("You WIN!");
+		exit(0);
+	} else;
+
+	if (counter < 3); {
+		while (counter < 3) {
+			printf("Try again...: ");
+			scanf_s("%d", &guess);
+			counter++;
+
+			if (guess == secretNumber) {
+				printf("You WIN!");
+				exit(0);
+			}
+		}
+	}
+	printf("You LOOOSE...");
+	return 0;
+}
