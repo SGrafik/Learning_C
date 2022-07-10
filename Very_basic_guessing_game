@@ -1,0 +1,26 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+// BASIC GUESSING GAME (WHILE Loop)
+// =======================
+
+// This game will ask the user to guess a secret number.
+// REMEMBER to initialize the "guess VAR by giving it a "0" value!"
+
+
+int main() {
+
+	int secretNumber = 5;
+	int guess = 0;
+
+	while (guess != secretNumber) {
+		printf("Enter a number: ");
+		scanf_s("%d", &guess);
+	}
+
+	printf("You WIN!");
+
+	return 0;
+}
+
