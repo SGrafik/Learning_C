@@ -1,0 +1,21 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+	// FUNCTIONS
+	// =======
+	
+	// Place the func BEFORE main().
+	// This is written OUTSIDE of the main() func. But it is CALLED WITHIN the main().
+	// If the func is not going to return anything it's being designated as VOID.
+	
+	void hello(char name[], int age) {
+	printf("Hello %s, you are %d years old.", name, age);
+}
+
+int main()
+{
+	hello("Stefan", 55);
+	
+	return 0;
+}
+
