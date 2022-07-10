@@ -1,0 +1,65 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+	// ADVANCED CALCULATOR (with SWITCH CASE)
+	// ============================
+
+	// Create var (w/o values), prompt for input with printf, value the var with scanf_s 
+	// DON'T FORGET the "&" before the var_name!
+	// IMPORTANT!!! Put a "SPACE" infront of the "%c" to scan a CHAR with scanf_s!
+	// The SWITCH / CASE need to have a BREAK on each instance.
+	// There needs to be a "DEFAULT: BREAK" at the end of the SWITCH / CASE function to terminate.
+	// Within the SWITCH func and then within the CASE the "IF" statements need to each be inside of {}.
+	// Also, if I'm accepting DOUBLE I need to scanf_s for "%lf" rather than "%d" or "%f".
+	// NOTE FROM WIKI: %lf : Scan as a double floating-point number. "Float" format with the "long" specifier.
+	// FROM: https://www.youtube.com/watch?v=d7R2bGdHl8Y
+
+
+int main() {
+
+double num1, num2;
+char op;
+
+	printf("Please enter your FIRST number: ");
+	scanf_s("%lf", &num1);
+
+	printf("Enter OPERAND: ");
+	scanf_s(" %c", &op, 2); // IMPORTANT!!! Put a "SPACE" infront of the "%c" to scan a CHAR with scanf_s!!!!
+	
+	printf("Please enter your SECOND number: ");
+	scanf_s("%lf", &num2);
+
+		switch(op)	{
+
+		case '+':
+			printf("%lf + %lf = %lf", num1, num2, num1 + num2);
+			break;
+
+		case '-':
+			printf("%lf - %lf = %lf", num1, num2, num1 - num2);
+			break;
+
+		case '*':
+			printf("%lf * %lf = %lf", num1, num2, num1 * num2);
+			break;
+
+		case '/':
+			if (num2 == 0.0)
+			{
+				printf("Divided by Zero Error");
+
+			}
+
+			else
+			{
+				printf("%lf / %lf = %lf", num1, num2, num1 / num2);
+
+			}
+			break;
+
+		default:
+			break;
+		}
+
+	return 0;
+		}
