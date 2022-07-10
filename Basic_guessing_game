@@ -1,0 +1,32 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// BASIC GUESSING GAME (IF statement & WHILE loop)
+// ================================
+
+// This game will ask the user to guess a secret number.
+// If the GUESS is wrong it will prompt to "TRY AGAIN" from then on.
+
+
+int main() {
+
+	int secretNumber = 5;
+	int guess = 0;
+
+	printf("Enter a number: ");
+	scanf_s("%d", &guess);
+
+	if (guess == secretNumber) {
+		printf("You WIN!");		// This only (!) prints if the guess is right at the first try.
+	} else;
+			while (guess != secretNumber) {
+				printf("Try again...: ");
+				scanf_s("%d", &guess);
+			}
+
+	printf("You WIN!");
+
+	return 0;
+}
