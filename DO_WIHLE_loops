@@ -1,0 +1,21 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+// DO WHILE LOOPS
+// ===========
+
+// This will print (execute) the code line and 
+// then AFTERWARDS check the WHILE condition further down.
+
+int main() {
+
+	int index = 1;
+	do {
+		printf("%d\n", index);
+		index++;                		
+	} while (index <= 6);
+
+
+	return 0;
+}
