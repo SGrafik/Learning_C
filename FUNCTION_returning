@@ -1,0 +1,29 @@
+# include <stdio.h>
+# include <stdlib.h>
+
+	// FUNCTIONS (RETURNING)
+	// ================
+	
+	// Place the func BEFORE main() if I want to return anything from it.
+	// TO AVOID THIS PROBLEM: "Prototype" the func by declaring it at the top "double cube(double num);" and
+	// then I can actually define it at the bottom and call it in main()!!!!!!
+	// Choose the return type / data type.
+	
+	
+// This func cubes any number.
+
+double cube(double num) {
+
+	//"double result = num * num * num;" & then return the "result" var "return result;".
+	// Doing this is one option, BUT I can simply use the return to do the calculation!
+	 
+	return num * num * num;
+}
+
+int main()
+{
+	printf("Answer: %f", cube(4));
+	
+	return 0;
+}
+
