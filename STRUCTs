@@ -1,0 +1,50 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+
+// STRUCTS
+// =======
+
+// A struct can store groups of DIFFERENT DATA TYPES.
+// For example: They can be used to MODEL REAL LIFE ENTITIES in C.
+// Structs can be passed into fucs, use it in an IF statement etc. just like a VAR or ARRAY.
+// They are similar (same?) as CALSSES in Python.
+// This example models a student...
+
+
+struct STUDENT {
+	char name[50];
+	char major[50];
+	int age;
+	double gpa;
+};
+
+int main() {
+
+	struct STUDENT student1;
+	student1.age = 22;
+	student1.gpa = 3.2;
+	strcpy(student1.name, "Jim Doe");
+	strcpy(student1.major, "Business");
+
+	struct STUDENT student2;
+	student2.age = 35;
+	student2.gpa = 2.5;
+	strcpy(student2.name, "Kathrine Smith");
+	strcpy(student2.major, "Computer Science");
+
+
+	printf("%s\n", student1.name);
+	printf("%d\n", student1.age);
+	printf("%s\n", student1.major);
+	printf("%f\n", student1.gpa);
+
+	printf("%s\n", student2.name);
+	printf("%d\n", student2.age);
+	printf("%s\n", student2.major);
+	printf("%f\n", student2.gpa);
+
+
+	return 0;
+		}
